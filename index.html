@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,70 +11,57 @@
     <link rel="stylesheet" href="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\styles.css">
 </head>
 <body>
+<main> 
+    <div class="main_div">
+        <div id="backarrow" class="backarrow" >
+                    <img src="https://img.icons8.com/color-glass/48/000000/circled-left.png" alt="" onclick= homepage()>
+        </div>
 
-    <section>
-    <p id="main_title">JackMovies</p>
 
-    <input type="text" placeholder="Buscar...">
-
+    <section class="header">
+    <p id="main_title" class="main_title">JackMovies</p>
+    <div class="browser" id="browser">
+        <input class= "browser_tab" type="text" placeholder="Buscar..."> <button onclick = alert() class="lupa"> <img src="https://img.icons8.com/glyph-neue/64/000000/search--v1.png" alt=""></button>
+    </div>
     </section>
 
     <section>
-
-    <p>Trending</p> <a href=""><p>Ver Mas</p></a>
-
+<div class="second_title">
+    <p class="Trending">Trending</p> <button class="button-79" id="more_button" role="button" onclick = trends()     ><p>Ver Mas</p></button>
+</div>
     </section>
 
-    <section>
-
-        <img src="" alt="">
-
+    <section id="trend">
+        <div class="film-container" id="trend-container">
+             <img id="film1" alt="">     
+             <img id="film2" alt="">  
+             <img id="film3" alt="">  
+            
+    </div>
     </section>
 
     <section id="categorias">
 
-        <h1>Categorias</h1>
-        <div id="cat_container">
+        <h1 class="categorias_title">Categorias</h1>
 
-                <a href="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\categorias.html">
-                 <div></div> <p>Accion</p>
-                </a>
+        <div class="cat_container" id="genders">
 
-                <a href="http://">
-                    <div></div> <p>Aventura</p>
-                   </a>
-
-                   <a href="http://">
-                    <div></div> <p>Comedia</p>
-                   </a>
-
-                   <a href="http://">
-                    <div></div> <p>Romance</p>
-                   </a>
-
-                   <a href="http://">
-                    <div></div> <p>Musical</p>
-                   </a>
-
-                   <a href="http://">
-                    <div></div> <p>Drama</p>
-                   </a>
-
-                   
-            
-
-            
-
+          
+                         
         </div>
 
     </section>
 
-    <footer>
+    
 
-        <div> <p> Hecho con amor por @JacksixDev</p></div>
-    </footer>
-
-   <Script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\secrets.js"></Script>
-    <script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\main.js"></script>
+</div>
+</main>
+<footer>
+  <div> <p class="madeby"> Hecho con amor por @JacksixDev</p></div>
+</footer>
+<script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\nodes.js"></script>
+<script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\navigation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  <script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\secrets.js"></script>
+<script src="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\main.js"></script>
 </body>
 </html>

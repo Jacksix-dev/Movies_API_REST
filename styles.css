@@ -1,0 +1,253 @@
+
+
+*{
+    margin: 0;
+}
+
+.main_title{
+    font-family: 'Mukta', sans-serif;
+    font-weight: 600;
+    color: rgb(89, 23, 151);
+    font-size: 2em;
+   
+}
+
+
+.inactive{
+    display: none;
+}
+
+
+
+main{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 3fr 1fr;
+   
+}
+
+.main_div{
+    grid-column: 2;
+}
+.browser{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.browser_tab{
+   width: 100%;
+   background-color:#E6E6FA ;
+   border: none;
+   border-radius: 6px;
+   outline: none;
+   
+}
+.lupa{
+    display: grid;
+    grid-column: 2;
+    background-color: blueviolet;
+    
+    border: none;
+    border-top-right-radius:6px ;    
+    border-bottom-right-radius:6px ; 
+    border-color: blueviolet;
+    object-fit: contain;
+}
+.lupa img{
+ height: 5vh;
+ width: 4vw; 
+place-self: center ;
+object-fit: contain;
+ 
+}
+
+.second_title{
+    
+    margin-top: 3vh;
+    display: grid;
+grid-template-columns: 1fr 1fr;
+}
+.Trending{
+    font-size: 1.5em;
+}
+.second_title p {
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    font-weight: bolder;
+    
+}
+
+
+.button-79 {
+  backface-visibility: hidden;
+  background: #782cf2;
+  border: 0;
+  border-radius: .375rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: 1rem 1.25rem;
+  position: relative;
+ 
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-79:disabled {
+  color: #787878;
+  cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+  outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+  border-width: .125rem;
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+
+.second_title button p{
+   color: white;
+   outline: none;
+   font-weight: lighter;
+   text-align: center;
+   
+}
+.film-container{
+    margin-top: 5vh;
+    display: flex;
+    
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
+.film-container img {
+    margin-right: 15px;
+    width: 25%;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+.film-container img:hover{
+    transform: scale(1.1,1.1);
+}
+
+.film-container2{
+    margin-top: 5vh;
+    display: grid;
+   grid-template-columns:  1fr 1fr;
+   grid-gap: 3vh;
+
+    
+}
+
+.film-container2 img {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+.film-container2 img:hover{
+    transform: scale(1.1,1.1);
+}
+
+
+.categorias_title{
+    margin-top: 5vh;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 600;
+    color: rgb(89, 23, 151);
+    
+}
+
+.cat_container{
+    margin-top: 5vh;
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    
+    
+}
+
+.cat_container div button{
+    font-family: 'Mukta', sans-serif;
+    font-weight: 600;
+    color: rgb(89, 23, 151);
+    cursor: pointer;
+    background:none;
+    border: none;
+    font-size: larger;
+}
+
+.categores_name{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+
+.categories{
+    display: flex;
+    align-self: center;
+}
+
+.categories a {
+    align-self: center;
+text-decoration: none;
+font-family: 'Mukta', sans-serif;
+    font-weight: lighter;
+    color: rgb(89, 23, 151);
+}
+
+footer{
+    display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+ width: 100%;
+ height:30px ;
+ place-content: center ;
+ background-color: blueviolet;
+}
+
+footer div p{
+    font-family: 'Mukta', sans-serif;
+grid-row: 3;
+color: white;
+}
