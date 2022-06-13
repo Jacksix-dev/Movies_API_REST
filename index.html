@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="C:\Users\Jacksix\Desktop\Proyectos Personales Programacion\Portafolio\Movies_API\styles.css">
 </head>
 <body>
-<main> 
-    <div class="main_div">
+<main > 
+    <div class="main_div" id="scrollArea">
         <div id="backarrow" class="backarrow" >
                     <img src="https://img.icons8.com/color-glass/48/000000/circled-left.png" alt="" onclick= homepage()>
         </div>
@@ -21,38 +21,83 @@
     <section class="header">
     <p id="main_title" class="main_title">JackMovies</p>
     <div class="browser" id="browser">
-        <input class= "browser_tab" type="text" placeholder="Buscar..."> <button onclick = alert() class="lupa"> <img src="https://img.icons8.com/glyph-neue/64/000000/search--v1.png" alt=""></button>
+        <input class= "browser_tab" type="text" id="searchinput" placeholder="Buscar..." onclick= enter()> <button onclick = search() class="lupa"> <img src="https://img.icons8.com/glyph-neue/64/000000/search--v1.png" alt=""></button>
     </div>
     </section>
 
     <section>
 <div class="second_title">
-    <p class="Trending">Trending</p> <button class="button-79" id="more_button" role="button" onclick = trends()     ><p>Ver Mas</p></button>
+    <p class="Trending" id="nd_title">Trending</p> <button class="button-79" id="more_button" role="button" onclick = trends()     ><p>Ver Mas</p></button>
 </div>
     </section>
 
-    <section id="trend">
+    <section id="trend" class="trend">
         <div class="film-container" id="trend-container">
-             <img id="film1" alt="">     
-             <img id="film2" alt="">  
-             <img id="film3" alt="">  
+             
+            <div class="loading-default"></div>
+            <div class="loading-default"></div>
+            <div class="loading-default"></div>
+
             
+    </div>
+
+    <div class="loadmore_container" id="loadmore_container">
+
     </div>
     </section>
 
-    <section id="categorias">
+    <section>
+        <div class="movie_info_container" id="minfo"> 
+            <p id="movie_title" class="movie_title"></p> <div class="movie-stars"> <img src="https://img.icons8.com/fluency/48/000000/star.png" alt="" id="movie_stars"> <p id="stars_number"></p></div>
 
-        <h1 class="categorias_title">Categorias</h1>
+            <p id="movie_information" class="movie_info"></p>
+                
+        </div>
+    </section>
 
-        <div class="cat_container" id="genders">
+    <section class="related_movies_section "  id="related_movies_section">
+            <h1 id="movie_title" class="movie_title"> Peliculas relacionadas</h1>
+            <div class="related_movies_container" id="related_movies_container">
+              
+            </div>
 
-          
+
+    </section>
+  
+
+    <h1 class="categorias_title" id="cat_title">Categorias</h1>
+    <section id="categorias" class="section_cat_container">
+
+          <div class="cat_container" id="genders">
+
+            <div class="loading-default-cat"></div>
+            <div class="loading-default-cat"></div>
+            <div class="loading-default-cat"></div>
+            <div class="loading-default-cat"></div>
                          
         </div>
 
     </section>
 
-    
+    <section class="fav_films_section" id="fav_films_section">
+        <div class="fav_films_container" id="fav_films_container">
+            <img src="" alt="">
+        </div>
+
+    </section>
+ 
+    <section id="trend" class="trend">
+        <p class="fav_films" id="fav_films_title">Peliculas Favoritas</p>
+        
+      
+        <div class="film-container" id="fav-container">
+           
+            <div class="loading-default" id="loading-default"></div>
+            <div class="loading-default" id="loading-default"></div>
+            <div class="loading-default" id="loading-default"></div>
+          
+            
+    </div>
 
 </div>
 </main>
