@@ -46,7 +46,7 @@ main{
     display: grid;
     grid-column: 2;
     background-color: blueviolet;
-    
+    cursor:pointer;
     border: none;
     border-top-right-radius:6px ;    
     border-bottom-right-radius:6px ; 
@@ -66,6 +66,7 @@ object-fit: contain;
     margin-top: 3vh;
     display: grid;
 grid-template-columns: 1fr 1fr;
+
 }
 .Trending{
     font-size: 1.5em;
@@ -75,6 +76,16 @@ grid-template-columns: 1fr 1fr;
     color: rgb(89, 23, 151);
     font-weight: bolder;
     
+    
+}
+
+.second_title2 p{
+
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    font-weight: bolder;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 
@@ -147,17 +158,23 @@ grid-template-columns: 1fr 1fr;
    
 }
 .film-container{
+    position: relative;
     margin-top: 5vh;
-    display: flex;
-    
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    width: 60vw;
+    grid-auto-flow: column;
     overflow-x: scroll;
-    overflow-y: hidden;
+    
     
 }
 
 .film-container img {
+    position: relative;
+    cursor:pointer;
     margin-right: 15px;
-    width: 25%;
+    width: 15vw;
     border-radius: 10px;
     transition-duration: 0.5s;
 }
@@ -176,14 +193,36 @@ grid-template-columns: 1fr 1fr;
 }
 
 .film-container2 img {
+    min-width: 20vw;
+    min-height: 35vh;
     cursor: pointer;
     width: 100%;
     border-radius: 10px;
+    object-fit: cover;
     
 }
 
 .film-container2 img:hover{
     transform: scale(1.1,1.1);
+}
+
+.individual_film{
+    display: grid;
+}
+
+.individual_film img{
+    width: 60vw;
+    height: 50vh;
+    object-fit: contain;
+   justify-self: center;
+  transition-duration: 0.5s;
+  border-radius: 100px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.individual_film img:hover{
+    transform: scale(1.05,1.05);
 }
 
 
@@ -195,15 +234,22 @@ grid-template-columns: 1fr 1fr;
     
 }
 
+.section_cat_container{
+display: grid;
+
+}
+
+
 .cat_container{
     margin-top: 5vh;
     display: grid;
-    
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr 1fr;
+   
     row-gap: 10px;
-    
-    
+       
+}
+
+.cat_container div{
+    grid-template-rows: 1fr 1fr;
 }
 
 .cat_container div button{
@@ -214,20 +260,17 @@ grid-template-columns: 1fr 1fr;
     background:none;
     border: none;
     font-size: larger;
+    grid-template-rows: 1fr 1fr;
 }
 
 .categores_name{
-    display: flex;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
 
 
-.categories{
-    display: flex;
-    align-self: center;
-}
 
 .categories a {
     align-self: center;
@@ -250,4 +293,186 @@ footer div p{
     font-family: 'Mukta', sans-serif;
 grid-row: 3;
 color: white;
+}
+
+
+.movie_info_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 18px;
+}
+
+.movie_title{
+    place-self: center;
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    font-weight: bolder;
+    font-size: 1.7rem;
+}
+
+.movie-stars{
+    display: flex;
+    justify-content: center;
+}
+.movie-stars img{
+    width: 36px;
+    height: 36px;
+    align-self: top;
+    margin-top: 1px;
+} 
+
+.movie-stars p{
+    align-self: center;
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    font-weight: bolder;
+    font-size: large;
+    margin-left: 5px;
+}
+
+
+.movie_info{
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    margin-top: 5vh;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+.related_movies_section h1{
+ margin-top:20px ;
+}
+
+.related_movies_container{
+    display: flex;
+overflow-x: scroll;
+ gap: 5px;
+ 
+
+}
+
+.related_movies_container img{
+    transition-duration: 00.5s;
+    width: 20%;
+    height: 30%;
+    object-fit: contain;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+
+
+.loading-default{
+    display: grid;
+    margin-right: 2vw;
+    width: 20vw;
+    height: 20vh;
+    background-color: #782cf2;
+    border-radius: 20px;
+    background: linear-gradient(87deg, #f1f0f2, #d8bef2);
+    background-size: 400% 400%;
+
+    animation: AnimationName 1s ease infinite;
+}
+
+
+
+@keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+
+
+.loading-default-cat{
+    display: grid;
+    margin-right: 2vw;
+    
+    width: 40vw;
+    height: 5vh;
+    background-color: #782cf2;
+    border-radius: 20px;
+    background: linear-gradient(87deg, #f1f0f2, #d8bef2);
+    background-size: 400% 400%;
+
+    animation: AnimationName 1s ease infinite;
+}
+
+.trend{
+    display: grid;
+}
+.loadmore{
+    margin-top: 2vh;
+    text-align: center;
+    height: 5vh;
+    width: 15vh;
+    place-self: center;
+    background-color: #782cf2;
+    font-family: 'Mukta', sans-serif;
+    color: white;
+    border:none;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+.loadmore_container{display: grid;}
+
+
+.image_button_container{
+    display: grid;
+grid-template-columns: 1fr ;}
+
+
+
+.like_button{
+   position: absolute;
+   margin: 10px 0 0 10px;
+    z-index: 1;
+    background-color: blueviolet;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    
+    
+
+}
+
+.like_button::before {
+    content: "🤍";
+}
+
+.like_button_active{
+   
+    position: absolute;
+   margin: 10px 0 0 10px;
+    z-index: 1;
+    background-color: blueviolet;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    
+}
+
+.like_button_active::before{
+    content: "❤️";
+}
+
+.fav_films{
+
+    place-self: center;
+    font-family: 'Mukta', sans-serif;
+    color: rgb(89, 23, 151);
+    font-weight: bolder;
+    font-size: 1.7rem;
 }
