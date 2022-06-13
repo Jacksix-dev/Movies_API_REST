@@ -40,7 +40,7 @@ function likedMoviesList(){
         movies = {};
         const section = document.getElementById("fav-container")
        const para = document.createElement("p")
-      
+       para.innerHTML= "Aun no"
        section.appendChild(para)
     }
     return movies;
