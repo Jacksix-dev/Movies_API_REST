@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,15 +20,20 @@
 
 
     <section class="header">
-    <p id="main_title" class="main_title">JackMovies</p>
+     <img id="main_title" class="main_title" src="Jack_films.png" alt="">   
+    
     <div class="browser" id="browser">
-        <input class= "browser_tab" type="text" id="searchinput" placeholder="Buscar..." onclick= enter()> <button onclick = search() class="lupa"> <img src="https://img.icons8.com/glyph-neue/64/000000/search--v1.png" alt=""></button>
+        <input class= "browser_tab" type="text" id="searchinput" placeholder="Search..." onclick= enter()> <button onclick = search() class="lupa"> 
+            <span class="material-symbols-outlined">
+            search
+            </span>
+        </button>
     </div>
     </section>
 
     <section>
 <div class="second_title">
-    <p class="Trending" id="nd_title">Trending</p> <button class="button-79" id="more_button" role="button" onclick = trends()     ><p>Ver Mas</p></button>
+    <p class="Trending" id="nd_title">Trending</p> 
 </div>
     </section>
 
@@ -40,12 +46,15 @@
 
             
     </div>
+    
 
     <div class="loadmore_container" id="loadmore_container">
 
     </div>
     </section>
-
+    <div class="button-container">
+    <button class="button-79" id="more_button" role="button" onclick = trends()><p>See More</p></button>
+    </div>
     <section>
         <div class="movie_info_container" id="minfo"> 
             <p id="movie_title" class="movie_title"></p> <div class="movie-stars"> <img src="https://img.icons8.com/fluency/48/000000/star.png" alt="" id="movie_stars"> <p id="stars_number"></p></div>
@@ -55,8 +64,11 @@
         </div>
     </section>
 
-    <section class="related_movies_section "  id="related_movies_section">
-            <h1 id="movie_title" class="movie_title"> Peliculas relacionadas</h1>
+    <section class="related_movies_section"  id="related_movies_section">
+        <div class="movie_title_container" id="movie_title_container">
+        <h1 id="movie_title2" class="movie_title"> Related Movies</h1>
+    </div> 
+            
             <div class="related_movies_container" id="related_movies_container">
               
             </div>
@@ -65,7 +77,7 @@
     </section>
   
 
-    <h1 class="categorias_title" id="cat_title">Categorias</h1>
+    <h1 class="categorias_title" id="cat_title">Categories</h1>
     <section id="categorias" class="section_cat_container">
 
           <div class="cat_container" id="genders">
@@ -76,6 +88,7 @@
             <div class="loading-default-cat"></div>
                          
         </div>
+        
 
     </section>
 
@@ -87,7 +100,7 @@
     </section>
  
     <section id="trend" class="trend">
-        <p class="fav_films" id="fav_films_title">Peliculas Favoritas</p>
+        <p class="fav_films" id="fav_films_title">Favourite Movies</p>
         
       
         <div class="film-container" id="fav-container">
@@ -102,7 +115,7 @@
 </div>
 </main>
 <footer>
-  <div> <p class="madeby"> Hecho con amor por @JacksixDev</p></div>
+  <div> <p class="madeby"> Created By @JacksixDev</p></div>
 </footer>
 <script src="nodes.js"></script>
 <script src="navigation.js"></script>

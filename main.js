@@ -14,7 +14,7 @@ const API_TRENDS = "https://api.themoviedb.org/3/trending/movie/day?api_key="+AP
       entries.forEach(entry => {
        
         if (entry.isIntersecting){
-            console.log("isIntersecting")
+            
             const urlImg = entry.target.getAttribute("data-img")
            entry.target.setAttribute("src",urlImg)
             
@@ -29,34 +29,55 @@ const API_TRENDS = "https://api.themoviedb.org/3/trending/movie/day?api_key="+AP
 
 // Data
 
+ function fav_check(){
+    const item = JSON.parse(localStorage.getItem("liked_movies"))
+    if  (Object.values(item).length >= 1){
+        
+    } else{
+        if ( location.hash = "home"){
+            const section = document.getElementById("fav-container")
+            const para = document.createElement("p")
+            para.classList.add("para")
+            para.innerText = "You do not have any favourite movies yet"
+            section.appendChild(para)
+        }
+           
+     }
+}
+
 function likedMoviesList(){
+    
     const item = JSON.parse(localStorage.getItem("liked_movies"))
         
+    
     let movies;
 
-    if (item){
+    if (Object.values(item).length >= 1){
         movies = item;
+      
     } else {
         movies = {};
-        const section = document.getElementById("fav-container")
-       const para = document.createElement("p")
-       para.innerHTML= "Aun no"
-       section.appendChild(para)
-    }
+        
+        
+    }        
     return movies;
-}
+    }
+   
+    
+
 
 function likedMovies(movie){
 const likedMovies = likedMoviesList()
-console.log(likedMovies)
+
 if  (likedMovies[movie.id]){
    likedMovies[movie.id] = undefined;
-    console.log("borrado bro")
+   
 }else{
     likedMovies[movie.id]= movie
-        console.log("agregado perri")
+    
 }
 localStorage.setItem("liked_movies", JSON.stringify(likedMovies))
+
 } 
 
     
@@ -70,7 +91,7 @@ function loadmovies(movies,clear = true, button = false){
             
          }
         
-         console.log(movies)
+         
          movies.forEach(movie => {
             if(movie.poster_path != null){
                const div_img_container = document.createElement("div")
@@ -84,13 +105,15 @@ function loadmovies(movies,clear = true, button = false){
                 like_button.classList.add("like_button")
                 like_button.addEventListener("click",() => 
                 {
+                   
                 if (location.hash === "#home")
                 {
                 like_button.classList.toggle("like_button_active")
                 likedMovies(movie)
+               
                 getLikedMovies()
                 }else{
-                    console.log("no estas en el home")
+                    
                     like_button.classList.toggle("like_button_active")
                     likedMovies(movie)
                 }
@@ -118,7 +141,7 @@ function loadmovies(movies,clear = true, button = false){
 
     
     const loadmore = document.createElement("button")
-    loadmore.innerText = "Cargar mas";
+    loadmore.innerText = "Load More";
     loadmore.id ="loadmorebutton"
     
     loadmore.classList.add("loadmore")
@@ -133,7 +156,7 @@ function loadmovies(movies,clear = true, button = false){
  function loadmovies2(movies){
     const section = document.getElementById("related_movies_container")
      section.innerHTML= ""; 
-     console.log("Xd")
+     
      if (movies !== []){
      movies.forEach(movie => {
         
@@ -160,7 +183,7 @@ function loadfavmovies(movies,clear = true, button = false){
         
      }
     
-     console.log(movies)
+     
      movies.forEach(movie => {
         if(movie.poster_path != null){
            const div_img_container = document.createElement("div")
@@ -173,9 +196,10 @@ function loadfavmovies(movies,clear = true, button = false){
          likedMoviesList()[movie.id] && like_button.classList.add("like_button_active")
             like_button.classList.add("like_button")
             like_button.addEventListener("click",() => {
-                   
+             
             like_button.classList.toggle("like_button_active")
             likedMovies(movie)
+           
             getLikedMovies()
             loadmovies(trendmovielist)
             
@@ -207,7 +231,7 @@ function loadfavmovies(movies,clear = true, button = false){
              img.src ="https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + poster;
             movie_info.innerHTML = description 
             ndtitle.innerHTML= title
-            movie_title.innerHTML = "Calificacion"
+            movie_title.innerHTML = "Rating"
             movie_stars.innerHTML = rating
             
 
@@ -238,14 +262,15 @@ function loadfavmovies(movies,clear = true, button = false){
          likedMoviesList()[movie.id] && like_button.classList.add("like_button_active")
             like_button.classList.add("like_button")
             like_button.addEventListener("click",() => {
-                   
+                    
                 if (location.hash === "#home")
                 {
                 like_button.classList.toggle("like_button_active")
                 likedMovies(movie)
+                
                 getLikedMovies()
                 }else{
-                    console.log("no estas en el home")
+                    
                     like_button.classList.toggle("like_button_active")
                     likedMovies(movie)
                 }
@@ -275,8 +300,7 @@ if(button === true){
  
 const loadmore = document.createElement("button")
 
-console.log("boton generado")
-loadmore.innerText = "Cargar mas";
+loadmore.innerText = "Load More";
 loadmore.id ="loadmorebutton"
 
 loadmore.classList.add("loadmore")
@@ -298,7 +322,7 @@ async function getTendencias(page = 1){
     });
 
         const data = await response.json()
-        console.log(data)
+        
         const movies = data.results;
         trendmovielist = data.results
         nd_title.innerHTML = "Trending";
@@ -361,10 +385,10 @@ async function getsearch (searchinput){
     const response = await fetch(API_SEARCH + searchinput,{
         method:"GET",
     });
-    nd_title.innerHTML = `Resultados de "${searchinput}"`;
+    nd_title.innerHTML = `Showing Results for "${searchinput}"`;
     const data = await response.json()
     const movies = data.results;
-    console.log(movies)
+    
     
     if (response.status=200) {loadmovies(movies)}
 }
@@ -377,7 +401,7 @@ async function getMovieById (id){
     const data = await response.json()
     const movie = data.results
 
-    console.log(data)
+    
     if (response.status=200) {loadmovie(data.poster_path,data.overview,data.title,data.vote_average)}
 }
 
@@ -385,8 +409,7 @@ async function getrecomendedmovies (id){
     const response = await fetch (API_RECOMEND + id + "/recommendations?api_key=" + API_KEY + "&language=en-US" )
 
     const data = await response.json()
-    console.log(data.results)
-
+    
     if (response.status=200){
         loadmovies2(data.results)
     }
@@ -399,7 +422,7 @@ async function loadpaginatedmovies(page,gender_code){
     });
 const data = await response.json()
 const movies = data.results;
-console.log(movies)
+
 if (response.status=200) {
     if (pages >= 2){
         pages = pages + 1
@@ -420,7 +443,7 @@ async function getPaginatedTrends(page){
     });
     
         const data = await response.json()
-        console.log(data)
+       
         const movies = data.results;
         nd_title.innerHTML = "Trending";
         movie_info.innerHTML= ""

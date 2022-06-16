@@ -34,3 +34,8 @@ const cat_div = document.getElementById("loading-default-cat")
 const fav_container = document.getElementById("fav-container")
 
 const fav_films_title = document.getElementById("fav_films_title")
+
+const movie_title_container = document.getElementById("movie_title_container")
+const related_movies_container = document.getElementById("related_movies_container")
+
+const movie_title2 = document.getElementById("movie_title2")

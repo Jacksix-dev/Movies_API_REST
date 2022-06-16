@@ -22,7 +22,7 @@ if (location.hash.startsWith("#trends")){
 }
 
 function trends(){
-    console.log("trends")
+    
     title.classList.remove("main_title")
     title.classList.add ("inactive")
 
@@ -49,11 +49,15 @@ function trends(){
     films_gen.innerHTML= ""
     location.hash="#trends"
 
-    fav_container.classList.remove("fav_container")
+    fav_container.classList.remove("film-container")
     fav_container.classList.add("inactive")
-    fav_container.innerHTML = ""
     fav_films_title.classList.add("inactive")
+    fav_container.innerHTML = ""
     
+    related_movies_container.classList.add("inactive")
+    related_movies_container.classList.remove("related_movies_container")
+    related_movies_container.innerHTML = "";
+    movie_title2.innerText = "";
     
     getPaginatedTrends(trendpage)
 }
@@ -84,17 +88,24 @@ function movie(id){
 
     info_container.classList.remove("inactive")
     movie_title.classList.remove("inactive")
+    
     movie_title.classList.add("second_title2")
     movie_stars.classList.remove("inactive")
     movie_stellars.classList.remove("inactive")
-
+    movie_title_container.classList.remove("inactive")
+   
     related_movies_section.classList.remove("inactive")
     loadmore_container.innerHTML = ""
-    fav_container.classList.remove("fav_container")
+    
+    fav_container.classList.remove("film-container")
     fav_container.classList.add("inactive")
-    fav_container.innerHTML = ""
     fav_films_title.classList.add("inactive")
-const movie_id = location.hash.split("-")
+    fav_container.innerHTML = ""
+
+    related_movies_container.classList.add("related_movies_container")
+
+    movie_title2.innerText = "Related Films";
+    const movie_id = location.hash.split("-")
 
     getMovieById(movie_id[1])
     getrecomendedmovies (movie_id[1])
@@ -131,12 +142,15 @@ function categories(){
    
     cat_title.classList.add("inactive")
     categories_genders.innerHTML = ""
-
-    fav_container.classList.remove("fav_container")
+    fav_container.classList.remove("film-container")
     fav_container.classList.add("inactive")
-    fav_container.innerHTML = ""
     fav_films_title.classList.add("inactive")
+    fav_container.innerHTML = ""
 
+    related_movies_container.classList.add("inactive")
+    related_movies_container.classList.remove("related_movies_container")
+    related_movies_container.innerHTML = "";
+    movie_title2.innerText = "";
     
 }
 
@@ -168,10 +182,10 @@ function search(){
     
     
     getsearch (searchinput.value)
-    fav_container.classList.remove("fav_container")
+    fav_container.classList.remove("film-container")
     fav_container.classList.add("inactive")
-    fav_container.innerHTML = ""
     fav_films_title.classList.add("inactive")
+    fav_container.innerHTML = ""
    
     location.hash="#search="+ searchinput.value 
 }
@@ -207,13 +221,23 @@ function homepage(){
     movie_title.classList.remove("second_title2")
 
     related_movies_section.classList.add("inactive")
+    fav_container.classList.add("film-container")
+    fav_films_title.classList.add("fav_films") 
+    fav_films_title.classList.remove("inactive") 
+    fav_films_title.innerHTML= "Favourite Movies"
 
+    movie_title_container.classList.add("inactive")
+    
+    related_movies_container.classList.add("inactive")
+    related_movies_container.classList.remove("related_movies_container")
+    related_movies_container.innerHTML = "";
+    movie_title2.innerText = "";
     trendpage = 1
     loadmore_container.innerHTML = ""
-    fav_films_title.innerHTML= "Peliculas Favoritas"
     getTendencias()
     getCathegories()
     getLikedMovies() 
-
+    fav_check()
+    
     location.hash="#home"
 }
