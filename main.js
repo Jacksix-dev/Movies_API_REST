@@ -52,12 +52,12 @@ function likedMoviesList(){
     
     let movies;
 
-    if (Object.values(item).length >= 1){
+    if (item != null){
+        
         movies = item;
       
-    } else {
+    } if (item === null) {
         movies = {};
-        
         
     }        
     return movies;
@@ -73,7 +73,7 @@ if  (likedMovies[movie.id]){
    likedMovies[movie.id] = undefined;
    
 }else{
-    likedMovies[movie.id]= movie
+    likedMovies[movie.id]= movie;
     
 }
 localStorage.setItem("liked_movies", JSON.stringify(likedMovies))
